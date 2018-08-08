@@ -12,7 +12,7 @@ export class AlbumComponent implements OnInit {
   public albums: IAlbum[];
 
   constructor(http: HttpClient) { 
-    http.get<IAlbum[]>('http://localhost:64708/api/Album').subscribe(result => {
+    http.get<IAlbum[]>('http://localhost:64708/api/Albums/size/Full').subscribe(result => {
       this.albums = result;
     }, error => console.error(error));
   }
@@ -23,6 +23,7 @@ export class AlbumComponent implements OnInit {
 }
 
 interface IAlbum {
-  albumName: string;
-  caption: string;
+  AlbumID: string;
+  AlbumName: string;
+  Caption: string;
 }
